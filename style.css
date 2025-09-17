@@ -1,0 +1,120 @@
+/* style.css - small custom styles to improve look + theme */
+:root{
+  --accent1: #ff6f61;
+  --accent2: #ffd89b;
+  --muted: #6c757d;
+}
+
+/* gradient header/footer */
+.bg-gradient {
+  background: linear-gradient(90deg, var(--accent1), #070707);
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(360deg, #ee5306 0%, #e90d0d 100%);
+  color: #222;
+  margin: 0;
+}
+
+/* header/footer text */
+header, footer {
+  color: white;
+}
+
+/* card subtle shadow */
+.card {
+  border: none;
+}
+
+/* table aesthetic */
+.table {
+  background: white;
+  border-radius: .35rem;
+  overflow: hidden;
+}
+
+.table thead th {
+  border: none;
+}
+
+/* small responsive tweaks */
+@media (max-width: 768px) {
+  header .container, footer .container {
+    display: block;
+    text-align: center;
+  }
+  header a.btn {
+    margin-top: .75rem;
+  }
+}
+/* Hero image section */
+.heros {
+  margin: 20px 0;
+  text-align: center;
+}
+.heros img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+.hero {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  gap: 40px; /* space between images */
+}
+
+.hero img {
+  width: 380px;   /* fixed width */
+  height: 250px;  /* fixed height */
+  object-fit: cover; /* crops nicely */
+  border-radius: 10px;
+}
+
+
+/* small visual for empty state */
+#noPetsMessage {
+  font-style: italic;
+}
+/* Make body full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Let main fill the space between header and footer */
+main {
+  min-height: calc(100vh - 140px); /* adjust for header/footer height */
+}
+
+/* Expand card/tables to fill available width */
+.card {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+/* Tables stretch full width */
+.table {
+  width: 100% !important;
+}
+
+/* Increase font-size for readability */
+body {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Add spacing inside main sections */
+main > section {
+  margin-bottom: 2rem;
+}
+
+/* Adjust header/footer padding so they feel balanced */
+header, footer {
+  padding: 1.5rem;
+}
+.button {
+  color: rgb(71, 11, 238);
+  background-color: #e0dc10;
+}
