@@ -71,6 +71,9 @@ header, footer {
   border-radius: 10px;
 }
 
+.is-invalid {
+  border: 2px solid red !important;
+}
 
 /* small visual for empty state */
 #noPetsMessage {
@@ -83,6 +86,36 @@ html, body {
   padding: 0;
 }
 
+/* Smooth transition for background and text */
+body, .navbar, .card, footer {
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* Dark mode theme */
+body.dark-mode {
+  background-color: #121212;
+  color: #eaeaea;
+}
+
+body.dark-mode .navbar {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+
+body.dark-mode footer {
+  background-color: #1f1f1f;
+  color: #ccc;
+}
+
+body.dark-mode .table {
+  color: #fff;
+  background-color: #2a2a2a;
+}
 /* Let main fill the space between header and footer */
 main {
   min-height: calc(100vh - 140px); /* adjust for header/footer height */

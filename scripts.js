@@ -271,3 +271,63 @@ window.displayRow = displayRow;
 window.displayPetCount = displayPetCount;
 window.displaySalonInfo = displaySalonInfo;
 window.bindRegistrationForm = bindRegistrationForm;
+
+function registerPetFromForm() {
+  // get form values
+  const name = $("#petName").val().trim();
+  const age = $("#petAge").val().trim();
+  const gender = $("#petGender").val().trim();
+  const breed = $("#petBreed").val().trim();
+  const service = $("#petService").val().trim();
+  const type = $("#petType").val().trim();
+  const color = $("#petColor").val().trim();
+  const paymentMethod = $("#petPayment").val().trim();
+  const fileInput = $("#petImage")[0];
+  let imageURL = "images/default-pet.png";
+
+  if (fileInput && fileInput.files.length > 0) {
+    imageURL = URL.createObjectURL(fileInput.files[0]);
+  }
+
+  // remove old red borders
+  $("input, select").removeClass("is-invalid");
+
+  // validation check
+  let isValid = true;
+  $("#registerForm input, #registerForm select").each(function () {
+    if ($(this).val().trim() === "") {
+      $(this).addClass("is-invalid"); // bootstrap red border
+      isValid = false;
+    }
+  });
+
+  if (!isValid) return; // stop if validation failed
+
+  // create new Pet (or Service) object
+  const newPet = new Pet(name, Number(age), gender, breed, service, type, color, paymentMethod, imageURL);
+  salon.pets.push(newPet);
+
+  // update table
+  displayRow(newPet);
+
+  // clear form
+  $("#registerForm")[0].reset();
+}
+
+// Dark mode toggle
+ const toggleBtn = document.getElementById("darkModeToggle");
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    // update button text dynamically
+    if (document.body.classList.contains("dark-mode")) {
+      toggleBtn.textContent = "☀️ Light Mode";
+      toggleBtn.classList.remove("btn-outline-light");
+      toggleBtn.classList.add("btn-outline-warning");
+    } else {
+      toggleBtn.textContent = "🌙 Dark Mode";
+      toggleBtn.classList.remove("btn-outline-warning");
+      toggleBtn.classList.add("btn-outline-light");
+    }
+  });

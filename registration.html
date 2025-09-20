@@ -7,10 +7,30 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
+<header class="bg-gradient text-white py-4">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Pet Salon</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="registration.html">Register</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+        </ul>
+      </div>
+    </div>
+    <li class="nav-item">
+          <button id="darkModeToggle" class="btn btn-outline-light ms-3">🌙 Dark Mode</button>
+      </li>
 
- <header class="bg-gradient text-white py-4">
+  </nav> 
     <div class="container d-flex align-items-center justify-content-between">
       <h1 class="h3 mb-0"><i class="bi bi-plus-square-fill"></i> Register a Pet</h1>
       <a href="index.html" class="btn btn-light">View Pets</a>
@@ -22,7 +42,7 @@
     <section class="card shadow-sm p-4">
       <h2 class="h5 mb-3">New Pet Registration</h2>
 
-      <form id="petForm" autocomplete="off">
+      <form id="registerForm" class="row g-3">
         <div class="row g-3">
           <div class="col-md-6">
             <label class="form-label">Name</label>
