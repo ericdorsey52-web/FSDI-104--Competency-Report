@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calendar Project — Tasks</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="stylet.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Calendar — Tasks</h1>
+      <div class="controls">
+        <button id="prev">◀ Prev</button>
+        <div class="muted small" id="monthLabel"></div>
+        <button id="next">Next ▶</button>
+        <button class="secondary" id="refresh">Refresh</button>
+      </div>
+    </header>
+
+    <div class="weekdays" id="weekdays"></div>
+    <div class="calendar" id="calendar"></div>
+
+    <div class="sidebar" id="sidebar">
+      <div class="day-info">
+        <div class="muted small">Selected date</div>
+        <h3 id="selectedDate">—</h3>
+        <div class="muted small">Create a new task for the selected day</div>
+        <form id="taskForm">
+          <input type="hidden" id="taskDate" />
+          <label>Title <input type="text" id="title" required /></label>
+          <label>Time <input type="time" id="time" /></label>
+          <label>Description <textarea id="description"></textarea></label>
+          <button type="submit">Save task</button>
+        </form>
+      </div>
+      <div class="task-list">
+        <div class="muted small">Tasks on this day</div>
+        <div id="tasksForDay"></div>
+        <div style="margin-top:8px">
+          <button id="deleteAll">Delete All (server)</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="modalRoot" style="display:none"></div>
+  </div>
+
+    <script src="calendar.js"></script>
+</body>
+</html>
